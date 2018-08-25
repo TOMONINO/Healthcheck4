@@ -1,0 +1,78 @@
+<%= form_with(model: record, local: true) do |form| %>
+  <% if record.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(record.errors.count, "error") %> prohibited this record from being saved:</h2>
+
+      <ul>
+      <% record.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :day %>
+    <%= form.date_select :day %>
+  </div>
+
+  <div class="field">
+    <%= form.label :height %>
+    <%= form.text_field :height, autocomplete: :off %>
+  </div>
+
+  <div class="field">
+    <%= form.label :weight %>
+    <%= form.text_field :weight, autocomplete: :off %>
+  </div>
+  
+ <% if false %>
+  <div class="field">
+    <%= form.label :bmi, 'BMI' %>
+    <%= form.text_field :bmi %>
+  </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :highblood %>
+    <%= form.number_field :highblood %>
+  </div>
+
+  <div class="field">
+    <%= form.label :lowblood %>
+    <%= form.number_field :lowblood %>
+  </div>
+
+  <div class="field">
+    <%= form.label :diary %>
+    <%= form.text_area :diary %>
+  </div>
+
+  <div class="field">
+    <%= form.label :picture %>
+    <%= form.file_field :picture %>
+  </div>
+
+  <div class="field">
+    <%= form.label :targetbmi, 'TargetBMI' %>
+    <%= form.text_field :targetbmi, autocomplete: :off %>
+  </div>
+  
+  <% if false %>
+  <div class="field">
+    <%= form.label :targetweight %>
+    <%= form.text_field :targetweight %>
+  </div>
+  <% end %>
+  
+  <% if false %>
+  <div class="field">
+    <%= form.label :compareweight %>
+    <%= form.text_field :compareweight %>
+  </div>
+  <% end %>
+  
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,60 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Day:</strong>
+  <%= @record.day %>
+</p>
+
+<p>
+  <strong>Height:</strong>
+  <%= @record.height %>
+</p>
+
+<p>
+  <strong>Weight:</strong>
+  <%= @record.weight %>
+</p>
+
+<p>
+  <strong>Bmi:</strong>
+  <%= @record.bmi %>
+</p>
+
+<p>
+  <strong>Highblood:</strong>
+  <%= @record.highblood %>
+</p>
+
+<p>
+  <strong>Lowblood:</strong>
+  <%= @record.lowblood %>
+</p>
+
+<p>
+  <strong>Diary:</strong>
+  <%= @record.diary %>
+</p>
+
+<p>
+  <strong>Picture:</strong>
+  <%= @record.picture %>
+  <%= image_tag(@record.picture_url, :size => "120x80") if @record.picture.present? %>
+</p>
+
+<p>
+  <strong>Targetbmi:</strong>
+  <%= @record.targetbmi %>
+</p>
+
+<p>
+  <strong>Targetweight:</strong>
+  <%= @record.targetweight %>
+</p>
+
+<p>
+  <strong>Compareweight:</strong>
+  <%= @record.compareweight %>
+</p>
+
+<%= link_to 'Edit', edit_record_path(@record) %> |
+<%= link_to 'Back', records_path %>
