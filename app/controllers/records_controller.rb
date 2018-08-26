@@ -4,7 +4,19 @@ class RecordsController < ApplicationController
   # GET /records
   # GET /records.json
   def index
-    @records = Record.all.order 'day asc'
+@records = Record.all.order 'day asc'
+    
+    puts @records
+    gon.data1 = []
+    gon.labels= []
+    for num in Record.all.count.times do
+      puts num
+       #test=num+1
+       @record = Record.find(num+1)
+       gon.data1 << @record.weight
+       gon.labels << @record.day
+    end
+    
   end
 
   # GET /records/1
