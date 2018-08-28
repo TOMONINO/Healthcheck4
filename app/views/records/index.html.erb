@@ -2,6 +2,12 @@
 
 <h1>Records</h1>
 
+<select id="listbox">
+<option value="1">日</option>
+<option value="2">週</option>
+<option value="3">月</option>
+</select>
+
 <canvas id="myChart" width="400" height="100"></canvas>
 <script>draw_graph();</script> 
 
@@ -52,7 +58,10 @@
     <% end %>
   </tbody>
 </table>
-
 <br>
 
 <%= link_to 'New Record', new_record_path %>
+
+<script>
+  set_handler();
+</script>
