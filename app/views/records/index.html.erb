@@ -34,8 +34,14 @@
         <td><%= record.highblood %></td>
         <td><%= record.lowblood %></td>
         <td><%= record.diary %></td>
-        <!-- <td><%= record.picture %></td> -->
-        <td><%= image_tag(record.picture_url, :size => "100x70") if record.picture.present? %></td>
+        <!--<td><%= record.picture %></td>-->
+        <td>
+          <%= image_tag(record.picture_urls[0], :size => "100x70") if record.picture_urls[0].present? %>
+          <%= image_tag(record.picture_urls[1], :size => "100x70") if record.picture_urls[1].present? %>
+          <%= image_tag(record.picture_urls[2], :size => "100x70") if record.picture_urls[2].present? %>
+          <%= image_tag(record.picture_urls[3], :size => "100x70") if record.picture_urls[3].present? %>
+          <%= image_tag(record.picture_urls[4], :size => "100x70") if record.picture_urls[4].present? %>
+        </td>
         <td><%= record.targetbmi %></td>
         <td><%= record.targetweight %></td>
         <td><%= record.compareweight %></td>

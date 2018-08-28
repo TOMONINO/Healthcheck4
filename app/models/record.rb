@@ -1,6 +1,6 @@
 class Record < ApplicationRecord
   
-  mount_uploader :picture, PictureUploader
+  mount_uploaders :picture, PictureUploader
   
   before_save do
     

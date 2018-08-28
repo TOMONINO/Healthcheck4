@@ -37,8 +37,12 @@
 
 <p>
   <strong>Picture:</strong>
-  <%= @record.picture %>
-  <%= image_tag(@record.picture_url, :size => "120x80") if @record.picture.present? %>
+  <%= puts @record %>
+    <%= image_tag(@record.picture_urls[0], :size => "160x120") if @record.picture_urls[0].present? %>
+    <%= image_tag(@record.picture_urls[1], :size => "160x120") if @record.picture_urls[1].present? %>
+    <%= image_tag(@record.picture_urls[2], :size => "160x120") if @record.picture_urls[2].present? %>
+    <%= image_tag(@record.picture_urls[3], :size => "160x120") if @record.picture_urls[3].present? %>
+    <%= image_tag(@record.picture_urls[4], :size => "160x120") if @record.picture_urls[4].present? %>
 </p>
 
 <p>

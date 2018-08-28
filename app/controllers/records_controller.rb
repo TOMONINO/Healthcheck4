@@ -81,7 +81,7 @@ class RecordsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def record_params
-      params.require(:record).permit(:day, :height, :weight, :bmi, :highblood, :lowblood, :diary, :picture, :targetbmi, :targetweight, :compareweight)
+      params.require(:record).permit(:day, :height, :weight, :bmi, :highblood, :lowblood, :diary, {picture: []}, :targetbmi, :targetweight, :compareweight)
     end
     
 end
