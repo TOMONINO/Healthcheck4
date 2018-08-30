@@ -38,11 +38,10 @@
 <p>
   <strong>Picture:</strong>
   <%= puts @record %>
-    <%= image_tag(@record.picture_urls[0], :size => "160x120") if @record.picture_urls[0].present? %>
-    <%= image_tag(@record.picture_urls[1], :size => "160x120") if @record.picture_urls[1].present? %>
-    <%= image_tag(@record.picture_urls[2], :size => "160x120") if @record.picture_urls[2].present? %>
-    <%= image_tag(@record.picture_urls[3], :size => "160x120") if @record.picture_urls[3].present? %>
-    <%= image_tag(@record.picture_urls[4], :size => "160x120") if @record.picture_urls[4].present? %>
+    <% @record.picture_urls.each do |picture_url| %>
+      <% next if picture_url.blank? %>
+      <%= image_tag(picture_url, size: '160x120') %>
+    <% end %>
 </p>
 
 <p>
