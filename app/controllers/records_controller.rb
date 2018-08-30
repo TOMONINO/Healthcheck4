@@ -9,12 +9,14 @@ class RecordsController < ApplicationController
     puts @records
     gon.data1 = []
     gon.labels= []
+    gon.data2 = []
     for num in Record.all.count.times do
       puts num
        #test=num+1
        @record = Record.find(num+1)
        gon.data1 << @record.weight
        gon.labels << @record.day
+       gon.data2 << @record.targetweight
     end
     
   end

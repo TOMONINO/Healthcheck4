@@ -71,20 +71,33 @@ window.draw_graph = ->
     myChart = new Chart(ctx, {
         type: 'line',
         data: {
-            labels: zaplabel,　#dayの値を入れたい、新しいデータが入った場合は？
+            labels: zaplabel,
             datasets: [{
                 label: 'Weight',
                 lineTension: 0,
                 fill: false,
-                data: zapdata, #weightの値を入れたい、新しいデータが入った場合は？
+                data: zapdata,
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                 ],
                 borderColor: [
                     'rgba(255,99,132,1)',
                 ],
-                borderWidth: 1
-            }]
+                borderWidth: 3
+            }, {
+                label: 'Targetweight',
+                data: gon.data2
+                type: 'line'
+                borderColor: [
+                    'rgba(11,218,81,1)',
+                ],
+                backgroundColor: [
+                    'rgba(11,218,81, 0.2)',
+                ],
+                lineTension: 0,
+                fill: false,
+                borderWidth: 6
+            }],
         },
         options: {
             scales: {
