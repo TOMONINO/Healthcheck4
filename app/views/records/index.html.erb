@@ -44,9 +44,10 @@
         <td><%= record.diary %></td>
         <!--<td><%= record.picture %></td>-->
         <td>
-          <% @record.picture_urls.each do |picture_url| %>
+          <%# <%= debug @record.picture_urls %>
+          <% record.picture_urls.each do |picture_url| %>
             <% next if picture_url.blank? %>
-            <%= image_tag(picture_url, size: '100x70') %>
+            <%= image_tag(picture_url, size: '85x70') %>
           <% end %>
         </td>
         <td><%= record.targetbmi %></td>

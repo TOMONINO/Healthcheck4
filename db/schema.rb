@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2018_08_25_131618) do
     t.integer "highblood"
     t.integer "lowblood"
     t.text "diary"
-    t.string "picture"
+    t.json "picture"
     t.float "targetbmi"
     t.float "targetweight"
     t.float "compareweight"

@@ -8,7 +8,7 @@ class CreateRecords < ActiveRecord::Migration[5.2]
       t.integer :highblood
       t.integer :lowblood
       t.text :diary
-      t.string :picture
+      t.json :picture
       t.float :targetbmi
       t.float :targetweight
       t.float :compareweight
