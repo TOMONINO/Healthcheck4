@@ -4,19 +4,8 @@ class RecordsController < ApplicationController
   # GET /records
   # GET /records.json
   def index
-@records = Record.all.order 'day desc'
     
-    
-    puts @records
-    puts Record.find(1).picture
-    puts Record.find(1).picture_urls
-
-    puts Record.find(2).picture
-    puts Record.find(2).picture_urls
-    
-    @records.find(1).picture_urls
-    @records.find(2).picture_urls
-    
+    @records = Record.all.order 'day desc'
     
     if Record.all.count > 0
       lastrecord = Record.find(Record.all.count)
@@ -27,13 +16,11 @@ class RecordsController < ApplicationController
     gon.labels= []
     gon.data2 = []
   
-    for num in Record.all.count.times do
-      puts num
-       #test=num+1
-       @record = Record.find(num+1)
-       gon.data1 << @record.weight
-       gon.labels << @record.day
-       #gon.data2 << @record.targetweight
+    tempRecords = Record.all.order 'day asc'
+    
+    tempRecords.each do |record|
+       gon.data1 << record.weight
+       gon.labels << record.day
        gon.data2 << target
     end
     
